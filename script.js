@@ -6,7 +6,7 @@ const greeting = document.getElementById("greeting");
 
 //track attendance
 let count = 0;
-const maxCount = 2;
+const maxCount = 50;
 
 // Handle form submission
 form.addEventListener("submit", function (event) {
@@ -35,7 +35,8 @@ form.addEventListener("submit", function (event) {
 
   //update check-in progress bar
   const percentage = Math.round((count / maxCount) * 100) + "%";
-  console.log(`Progress: ${percentage}`);
+  const progressBar = document.getElementById("progressBar");
+  progressBar.style.width = percentage;
 
   //update team counter
   const teamCounter = document.getElementById(team + "Count");
