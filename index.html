@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,6 +37,10 @@
         <p id="attendanceMessage"></p>
       </div>
     </div>
+
+    <!-- Celebration message -->
+    <div id="celebrationMessage" class="celebration-message"></div>
+
     <div class="container">
       <!-- Feedback message -->
       <p id="greeting"></p>
@@ -81,6 +85,25 @@
           <div class="team-card power">
             <span class="team-name">⚡ Team Renewables</span>
             <span class="team-count" id="powerCount">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attendee list -->
+      <div class="attendee-list-section">
+        <h3>Check-In List</h3>
+        <div class="attendee-grid">
+          <div class="attendee-column water">
+            <div class="column-header">🌊 Team Water Wise</div>
+            <div id="waterAttendees" class="column-attendees"></div>
+          </div>
+          <div class="attendee-column zero">
+            <div class="column-header">🌿 Team Net Zero</div>
+            <div id="zeroAttendees" class="column-attendees"></div>
+          </div>
+          <div class="attendee-column power">
+            <div class="column-header">⚡ Team Renewables</div>
+            <div id="powerAttendees" class="column-attendees"></div>
           </div>
         </div>
       </div>

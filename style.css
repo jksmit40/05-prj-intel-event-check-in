@@ -355,6 +355,122 @@ select {
   color: #475569;
 }
 
+/* Celebration Message */
+#celebrationMessage {
+  display: none;
+  max-width: 700px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+  text-align: center;
+  z-index: 100;
+}
+
+.celebration-content h2 {
+  font-size: 48px;
+  color: #003c71;
+  margin-bottom: 15px;
+}
+
+.celebration-content p {
+  font-size: 20px;
+  color: #003c71;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.winning-team {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.winning-count {
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Attendee List Section */
+.attendee-list-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f1f5f9;
+}
+
+.attendee-list-section h3 {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Create a 3-column grid for attendees, matching the team cards above */
+.attendee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+  gap: 15px; /* Space between columns */
+}
+
+/* Style each team's column with matching background colors */
+.attendee-column {
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Color-code each team column to match the team cards */
+.attendee-column.water {
+  background-color: #e8f7fc; /* Light blue for water team */
+}
+
+.attendee-column.zero {
+  background-color: #ecfdf3; /* Light green for net zero team */
+}
+
+.attendee-column.power {
+  background-color: #fff7ed; /* Light orange for renewables team */
+}
+
+/* Style the team name header in each column */
+.column-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Container for all attendee names in a column */
+.column-attendees {
+  display: flex;
+  flex-direction: column; /* Stack names vertically */
+  gap: 8px; /* Space between each name */
+  max-height: 250px; /* Limit height so long lists are scrollable */
+  overflow-y: auto; /* Allow scrolling if needed */
+}
+
+/* Style for each individual attendee name */
+.attendee-item {
+  padding: 8px 10px;
+  background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent white */
+  border-radius: 6px;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth animation on hover */
+}
+
+/* Add interactive effect when hovering over an attendee name */
+.attendee-item:hover {
+  background-color: white; /* Make background more solid on hover */
+  transform: translateX(2px); /* Slide slightly to the right */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Add subtle shadow */
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .hero {
@@ -386,6 +502,10 @@ select {
   }
 
   .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attendee-grid {
     grid-template-columns: 1fr;
   }
 }
