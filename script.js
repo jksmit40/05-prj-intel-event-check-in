@@ -2,10 +2,11 @@
 const form = document.getElementById("checkInForm");
 const nameInput = document.getElementById("attendeeName");
 const teamSelect = document.getElementById("teamSelect");
+const greeting = document.getElementById("greeting");
 
 //track attendance
 let count = 0;
-const maxCount = 50;
+const maxCount = 2;
 
 // Handle form submission
 form.addEventListener("submit", function (event) {
@@ -22,6 +23,7 @@ form.addEventListener("submit", function (event) {
   count++;
   console.log("Total check-ins:", count);
   if (count > maxCount) {
+      greeting.textContent = ""; // Clear greeting message
       attendanceMessage.textContent = "Maximum attendance reached!";
       attendanceMessage.style.color = "red";
       form.reset(); // Reset form if max count is exceeded
@@ -41,7 +43,6 @@ form.addEventListener("submit", function (event) {
 
   //Show welcome message
   const message = `Welcome, ${name} from ${teamName}!`;
-  const greeting = document.getElementById("greeting");
   greeting.textContent = message;
 
   // Reset form
