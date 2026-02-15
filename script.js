@@ -23,20 +23,27 @@ form.addEventListener("submit", function (event) {
   count++;
   console.log("Total check-ins:", count);
   if (count > maxCount) {
-      greeting.textContent = ""; // Clear greeting message
-      attendanceMessage.textContent = "Maximum attendance reached!";
-      attendanceMessage.style.color = "red";
-      form.reset(); // Reset form if max count is exceeded
-      return;
+    greeting.textContent = ""; // Clear greeting message
+    attendanceMessage.textContent = "Maximum attendance reached!";
+    attendanceMessage.style.color = "red";
+    form.reset(); // Reset form if max count is exceeded
+    return;
   }
 
   // Update message with current count
   attendeeCount.textContent = `${count}`;
 
   //update check-in progress bar
-  const percentage = Math.round((count / maxCount) * 100) + "%";
+  const percentage = Math.round((count / maxCount) * 100);
   const progressBar = document.getElementById("progressBar");
-  progressBar.style.width = percentage;
+  progressBar.style.width = percentage + "%";
+
+  // Only show text inside bar if wide enough (15% or more)
+  if (percentage >= 15) {
+    progressBar.textContent = percentage + "% Full";
+  } else {
+    progressBar.textContent = "";
+  }
 
   //update team counter
   const teamCounter = document.getElementById(team + "Count");
